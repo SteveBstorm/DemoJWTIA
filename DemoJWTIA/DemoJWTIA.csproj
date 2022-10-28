@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.25.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo_ASP_MVC_06_Session.BLL\Demo_ASP_MVC_06_Session.BLL.csproj" />
+    <ProjectReference Include="..\Demo_ASP_MVC_06_Session.DAL\Demo_ASP_MVC_06_Session.DAL.csproj" />
+    <ProjectReference Include="..\Demo_ASP_MVC_06_Session.Domain\Demo_ASP_MVC_06_Session.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
