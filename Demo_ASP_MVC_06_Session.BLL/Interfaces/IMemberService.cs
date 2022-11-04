@@ -13,5 +13,6 @@ namespace Demo_ASP_MVC_06_Session.BLL.Interfaces
         public Member? Register(Member memberData);
 
         public Member? Login(string identifiant, string password);
+        public IEnumerable<Member> GetAll();
     }
 }

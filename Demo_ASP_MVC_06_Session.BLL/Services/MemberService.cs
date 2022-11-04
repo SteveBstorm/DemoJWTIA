@@ -62,5 +62,10 @@ namespace Demo_ASP_MVC_06_Session.BLL.Services
             int memberId = _memberRepository.Add(memberData);
             return _memberRepository.GetById(memberId);
         }
+
+        public IEnumerable<Member> GetAll()
+        {
+            return _memberRepository.GetAll();
+        }
     }
 }

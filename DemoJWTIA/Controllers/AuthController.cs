@@ -6,6 +6,8 @@ using DemoJWTIA.Tools;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace DemoJWTIA.Controllers
 {
@@ -56,12 +58,23 @@ namespace DemoJWTIA.Controllers
                 return BadRequest(e.Message);
             }
         }
-
-        [HttpGet]
         [Authorize("connected")]
+        [HttpGet]
         public IActionResult Get()
         {
-            return Ok("ça fonctionne et je suis un king");
+            string id = "";
+            ClaimsIdentity identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null)
+            {
+                id = identity.Claims.First(x => x.Type == ClaimTypes.GivenName).Value;
+            }
+            return Ok("ça fonctionne et je suis un king " + id);
         }
+
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    return Ok(_memberService.GetAll());
     }
+    
 }
