@@ -71,6 +71,12 @@ namespace DemoJWTIA.Controllers
             return Ok("ça fonctionne et je suis un king " + id);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return Ok(_memberService.GetById(id));
+        }
+
         //[HttpGet]
         //public IActionResult GetAll()
         //{

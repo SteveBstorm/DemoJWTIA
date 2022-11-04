@@ -20,4 +20,6 @@
     <ProjectReference Include="..\Demo_ASP_MVC_06_Session.Domain\Demo_ASP_MVC_06_Session.Domain.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>

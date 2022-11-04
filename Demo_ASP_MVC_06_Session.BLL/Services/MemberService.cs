@@ -67,5 +67,10 @@ namespace Demo_ASP_MVC_06_Session.BLL.Services
         {
             return _memberRepository.GetAll();
         }
+
+        public Member GetById(int id)
+        {
+            return _memberRepository.GetById(id);
+        }
     }
 }

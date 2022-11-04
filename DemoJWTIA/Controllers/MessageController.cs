@@ -1,6 +1,7 @@
 ﻿using Demo_ASP_MVC_06_Session.BLL.Interfaces;
 using Demo_ASP_MVC_06_Session.Domain.Entities;
 using DemoJWTIA.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -24,6 +25,7 @@ namespace DemoJWTIA.Controllers
             return Ok(_messageService.GetAll());
         }
 
+        [Authorize("connected")]
         [HttpPost]
         public IActionResult Post(NewMessageViewModel message)
         {
